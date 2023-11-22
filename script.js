@@ -105,6 +105,30 @@ function saatiGuncelle() {
 setInterval(saatiGuncelle, 1000); // 1000 milisaniye = 1 saniye
 
 
+// Tarihi al
+const tarihElementi = document.querySelector('.card-header span:last-child');
+
+function tarihGuncelle() {
+    const simdi = new Date();
+    const gunler = ['Pazar', 'Pazartesi', 'Salı', 'Çarşamba', 'Perşembe', 'Cuma', 'Cumartesi'];
+    const ayAdlari = ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran', 'Temmuz', 'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık'];
+
+    const gun = simdi.getDate();
+    const haftaninGunu = gunler[simdi.getDay()];
+    const ay = ayAdlari[simdi.getMonth()];
+    const yil = simdi.getFullYear();
+
+    const tarih = `${gun} ${ay} ${yil}, ${haftaninGunu}`;
+
+    // HTML içeriğini güncelle
+    tarihElementi.textContent = tarih;
+}
+
+// Sayfa yüklendiğinde ve belirli aralıklarla tarihi güncelle
+tarihGuncelle();
+setInterval(tarihGuncelle, 1000); // Her saniyede bir tarihi güncelle
+
+
 
 // Planı seç butonunu seçme
 const planSecButton1 = document.getElementById('planSecButton1');
