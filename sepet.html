@@ -9,24 +9,250 @@
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 
+<style>
+    nav {
+        width: 100%;
+        height: 75px;
+        text-align: center;
+        background-color: red;
+        /* padding-top: 50px; */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        /* Dikeyde ortalama */
+        padding-left: 50px;
+        padding-right: 50px;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+
+    nav div {
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        padding: 10px;
+        transition: all .2s linear;
+    }
+
+
+    nav div:hover {
+        border: 1px solid white;
+        /* border-radius: 15px; */
+        box-shadow: 3px 3px 3px white;
+    }
+
+    nav a {
+        /* width: 100px;
+    height: 100px; */
+        /* padding: 10px; */
+        /* padding-top: 100px; */
+        color: white;
+    }
+
+    main {
+        margin-top: 50px;
+    }
+</style>
+
 <body>
 
     <nav>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <h4>Sepetimdeki ürünler: </h4>
+        <a href="index.html">
+            <div>
+                <i class="fa-solid fa-house"></i>
+            </div>
+        </a>
+        <h1 class="fw-bold text-white">Sepetteki Ürünler</h1>
+        <a href="#">
+            <div>
+                <!-- <i class="fa-solid fa-rotate-left"></i> -->
+                <i class="fa-solid fa-basket-shopping"></i>
+            </div>
+        </a>
+    </nav>
+
+    <main class=" align-items-center justify-items-center">
+
+        <div id="sepet">
+        </div>
+        <div class="container w-25 align-items-center justify-content-center mt-3">
+            <div onclick="kapatSepet()" class="fw-bold container btn btn-danger">
+                Sepeti Temizle
+            </div>
+        </div>
+
+        <div class="accordion container mt-3" id="accordionPanelsStayOpenExample">
+            <div class="accordion-item text-white fw-bold">
+                <h2 class="accordion-header">
+                    <button class="accordion-button bg-danger text-white fw-bold" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                        aria-controls="panelsStayOpen-collapseOne">
+                        KVKK Aydınlatma Metni
+                    </button>
+                </h2>
+                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+                    <div class="accordion-body text-secondary">
+                        1.GİRİŞ
+
+                        İşbu aydınlatma metni, 6698 sayılı Kişisel Verilerin Korunması Kanununun (“Kanun”) 10. maddesi
+                        uyarınca, T.C. KÜLTÜR VE TURİZM BAKANLIĞI (“VERİ SORUMLUSU”) tüzel kişiliği, ilgili müdürlük ve
+                        birimleri ve hizmet merkezlerinde toplanan kişisel verilerin işlenmesine ilişkin ilgili
+                        kişilerin aydınlatılması amacı ile hazırlanmıştır.
+
+                        VERİ SORUMLUSU, kişisel verilerin işlenmesi, korunması ve güvenliği hususuna azami hassasiyet ve
+                        gayret göstermektedir.
+
+                        Kişisel veriler VERİ SORUMLUSU tarafından her türlü işitsel, yazılı, görsel ya da elektronik
+                        yöntemlerle toplanabilecektir.
+
+                        Bu kapsamda ve Kanun gereğince ilgili kişilerin kişisel verileri VERİ SORUMLUSU tarafından
+                        Kanunda sayılan genel ilkeler doğrultusunda gerçekleştirilmesi gereken iş ve işlemler için Veri
+                        Sorumlusu sıfatıyla işlenebilecektir.
+
+                        2.KİŞİSEL VERİLERİN İŞLENME AMACI
+
+                        Kişisel veriler, Kanun’un 5. ve 6. maddelerinde belirtilen kişisel veri işleme şartları ile
+                        Kanun’da belirtilen amaçlar çerçevesinde ve sınırlı olmamak kaydıyla aşağıda belirtilen
+                        amaçlarla işlenmektedir. Buna göre kişisel verilerin işlenme amacı;
+
+                        VERİ SORUMLUSU ‘un ilgili mevzuatlar çerçevesinde yükümlü olduğu iş ve işlemleri yürütebilmesi,
+                        vazife ve sorumlulukları çerçevesinde kamu hizmetini ifa etmesi,
+                        VERİ SORUMLUSU tarafından sunulan hizmetlerden maksimum faydanın sağlanması için gerekli
+                        çalışmaların yapılması,
+                        VERİ SORUMLUSU ‘un ve paydaşların hukuki yükümlülüklerinin ve hizmet güvenliğinin sağlanması,
+                        VERİ SORUMLUSU ’un hizmetlerinin ve stratejilerinin sürdürülmesi,
+                        VERİ SORUMLUSU’na haklar, vazifeler, iş ve işlemler yükleyen kanunlar ve ilgili mevzuatlar
+                        uyarınca sorumluluklarını ifa etme,
+                        VERİ SORUMLUSU’nun insan kaynakları ve istihdam politikalarının yönetilmesi
+                        Kültür Varlıklarının korunması işlemlerinin yürütülmesi
+                        Kütüphanecilik faaliyetlerinin yürütülmesi
+                        Destek, hibe, teşvik vb. işlemlerin gerçekleştirilmesi
+                        Müzelere ilişkin işlemlerin gerçekleştirilmesi
+                        Avrupa ve dış ilişkilerin yönetilmesi
+                        Basın ve yayın faaliyetlerinin yürütülmesi
+                        Sanatsal etkinlik, faaliyet vb. hususlarda çalışmaların yapılması
+                        Hizmet ve yönetim kalitesinin arttırılması ve bu kapsamda çalışmaların yapılması
+                        VERİ SORUMLUSU, kişisel verilerin hukuka aykırı olarak işlenmesinin ve verilere hukuka aykırı
+                        olarak erişilmesinin önlenmesi ve kişisel verilerin güvenli bir şekilde muhafaza edilmesi
+                        amacıyla gerekli hukuki, teknik ve idari tedbirleri en üst seviyede, kanunda belirtilen ilkeler
+                        doğrultusunda işlemeye gayret göstermektedir.
+
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed bg-danger text-white fw-bold" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
+                        aria-controls="panelsStayOpen-collapseThree">
+                        Açık Rıza Beyan Metni
+                    </button>
+                </h2>
+                <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        6698 Sayılı KVK Kanununun 3. Maddesinde;
+                        Açık rıza, kanunda “belirli bir konuya ilişkin, bilgilendirilmeye dayanan ve özgür iradeyle
+                        açıklanan rıza” şeklinde tanımlanmıştır. Buna göre açık rızanın üç unsuru vardır:
+
+                        • Belirli bir konuya ilişkin olması
+                        • Bilgilendirilmeye dayanması
+                        • Özgür iradeyle açıklanması
+
+                        Örnek açık rıza metni;
+
+                        EmirBank Ltd. Şti.
+
+                        KİŞİSEL VERİLERİN KORUNMASI KANUNU KAPSAMINDA AÇIK RIZA BEYANI
+
+                        EmirBank Ltd. Şti. (‘‘Şirket’’) tarafından, 6698 Sayılı Kişisel
+                        Verilerin Korunması Kanunu’nun (“KVK Kanunu”) ilgili hükümlerine uygun olarak bilginize sunulan
+                        Kişisel Verilerin Korunması Kanunu Kapsamında Genel Aydınlatma Metni ve Şirket Kişisel Verilerin
+                        Korunması ve İşlenmesi Yönetmeliği çerçevesinde,
+
+                        Kişisel verilerinin veri sorumlusu sıfatıyla Şirket veya gerekli güvenlik tedbirlerini aldırmak
+                        suretiyle yetkilendirdiği veri işleyenler tarafından; Şirket’in müşterilerine sunmuş olduğu ürün
+                        ve hizmetlerini en iyi koşullar altında sağlayabilmesi, ürün veya hizmetlerin güvenilir ve
+                        kesintisiz bir şekilde temin edilmesi, müşteri memnuniyetinin en üst seviyeye çıkarılması,
+                        ödemelerin yapılması, mezkûr hizmetlere ilişkin çeşitli işlemlerin yerine getirilmesi,
+                        operasyonların yürütülmesi ve geliştirilmesi, mezkûr ürün ve hizmetlerin veya farklı ürün ve
+                        hizmetlerin tanıtım, pazarlama, reklam ve kampanya faaliyetlerinin yapılması, müşterilerin
+                        fırsatlardan, kampanyalardan ve sair hizmetlerden haberdar edilmesi ve müşterilerle akdedilen
+                        sözleşmelerin gereklerinin yerine getirilmesi amaçlarıyla doğrudan veya dolaylı olarak ilgili
+                        olan kimlik bilgilerinin, adres bilgilerinin, iletişim bilgilerinin ve sair kişisel verilerin;
+                        başta mevzuatta öngörülen veya işlendikleri amaç için gerekli olan süre kadar muhafaza edilme
+                        ilkesi olmak üzere 6698 Sayılı Kişisel Verilerin Korunması Kanunu’nun (“KVK Kanunu”) 4.
+                        maddesinde ifade edilen genel ilkelere uygun şekilde işlenebileceğini; elde edilebileceğini,
+                        kaydedilebileceğini, işlenme amacıyla uygun süre zarfında fiziksel veya elektronik ortamda
+                        güvenli bir şekilde depolanabileceğini, muhafaza edilebileceğini, değiştirilebileceğini, yeniden
+                        düzenlenebileceğini, mevzuata uygun biçimde açıklanabileceğini ve aktarılabileceğini,
+                        devralınabileceğini, sınıflandırılabileceğini, işlenebileceğini ya da verilerin kullanılmasının
+                        engellenebileceğini; yukarıda belirtilen hususlarla ilgili olarak Şirket tarafından
+                        bilgilendirildiğimi ve KVK Kanunu çerçevesinde açık rızam bulunduğunu kabul ve beyan ederim.
+                    </div>
                 </div>
             </div>
         </div>
-    </nav>
-    <main>
-        <div id="sepet">
-            @foreach ($urun as $item)
+
+        <div id="sonuc">
+        </div>
+        <div class="container w-25 align-items-center justify-content-center mt-3">
+            <div class=" container btn btn-danger fw-bold">
+                Ödeme Yap
+            </div>
         </div>
     </main>
 
-    <button onclick="kapatSepet()">Sepeti Temizle</button>
+    <div class="bg-danger mt-3">
+        <div class="container">
+            <footer class="py-5 text-white">
+                <div class="row">
+                    <div class="col-6 col-md-2 mb-3">
+                        <h5 class="fw-bold">Instagram</h5>
+                        <a class="text-white " href=""><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+
+                    <div class="col-6 col-md-2 mb-3">
+                        <h5 class="fw-bold">GitHub</h5>
+                        <a href="" class="text-white"><i class="fa-brands fa-github"></i></a>
+                    </div>
+
+                    <div class="col-6 col-md-2 mb-3">
+                        <h5 class="fw-bold">LinkedIn</h5>
+                        <a href="" class="text-white"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+
+                    <div class="col-md-5 offset-md-1 mb-3">
+                        <form>
+                            <h5 class="fw-bold">Abone Ol</h5>
+                            <p class="fw-bold">Bilgilerden haberdar olmak için E-Posta adresinizi yazınız.</p>
+                            <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+                                <label for="newsletter1" class="visually-hidden">Email address</label>
+                                <input id="newsletter1" type="text" class="form-control fw-bold" placeholder="E-Posta Adresi">
+                                <button class="btn btn-dark fw-bold w-50" type="button">Abone ol</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="fw-bold d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+                    <p class="fw-bold">© 2023 EmirBank, Inc. All rights reserved.</p>
+                    <ul class="list-unstyled d-flex">
+                        <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24">
+                                    <use xlink:href="#twitter"></use>
+                                </svg></a></li>
+                        <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24">
+                                    <use xlink:href="#instagram"></use>
+                                </svg></a></li>
+                        <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24">
+                                    <use xlink:href="#facebook"></use>
+                                </svg></a></li>
+                    </ul>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/4e739239cd.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
