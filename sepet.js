@@ -1,3 +1,5 @@
+// const temizle = document.getElementById("temizle")
+
 document.addEventListener("DOMContentLoaded", function () {
     const sepetDiv = document.getElementById("sepet");
     const sonucDiv = document.getElementById("sonuc")
@@ -48,19 +50,29 @@ function kapatSepet() {
     location.reload();
 }
 
-const odeme = document.getElementById("odemeYap")
+
 
 
 // alert(`Ödeyeceğiniz tutar: ${secilenPlan.fiyat}`)
-// const kartNumarasi = Number(prompt("Kredi kartı numaranızı giriniz."))
 function odemeYap() {
+    const kartNumarasi = Number(prompt("Kredi kartı numaranızı giriniz."))
 
     if (kartNumarasi !== null) {
         const kartTarih = Number(prompt("Kartınızın son kullanım tarihini giriniz."))
         if (kartTarih !== null) {
             const cvv = Number(prompt("CVV numaranızı giriniz."));
             if (cvv !== null) {
-                alert("Ödeme İşleminiz gerçekleştriliyor. Bizi tercih ettiğiniz için teşekkürler.")
+                const hassasBilgiler = {
+                    kartNumarasi: kartNumarasi,
+                    kartTarih: kartTarih,
+                    cvv: cvv
+                };
+
+                // Local Storage'a JSON formatında kaydetme
+                localStorage.setItem('hassasBilgiler', JSON.stringify(hassasBilgiler));
+                alert("Ödeme İşleminiz gerçekleştiriliyor. Bizi tercih ettiğiniz için teşekkürler.")
+                // kapatSepet()
+
             } else {
                 alert("Lütfen CVV numarasını doğru girdiğinden emin olunuz.");
             }
@@ -72,29 +84,19 @@ function odemeYap() {
     }
 };
 
-document.addEventListener("click", function () {
-    
-    // const secilenPlanJSON = localStorage.getItem("secilenPlan");
-    // let secilenPlan;
+function odemeOnay() {
+    const sepetDiv = document.getElementById("sepet");
+    const sonucDiv = document.getElementById("sonuc")
 
-    // secilenPlan = JSON.parse(secilenPlanJSON);
+    // localStorage'dan seçilen planı al
+    const secilenPlanJSON = localStorage.getItem("secilenPlan");
+    let secilenPlan;
 
-    // alert(`Ödeyeceğiniz tutar: ${secilenPlan.fiyat}`)
-    const kartNumarasi = Number(prompt("Kredi kartı numaranızı giriniz."))
-
-    if (kartNumarasi !== null) {
-        const kartTarih = Number(prompt("Kartınızın son kullanım tarihini giriniz."))
-        if (kartTarih !== null) {
-            const cvv = Number(prompt("CVV numaranızı giriniz."));
-            if (cvv !== null) {
-                alert("Ödeme İşleminiz gerçekleştriliyor. Bizi tercih ettiğiniz için teşekkürler.")
-            } else {
-                alert("Lütfen CVV numarasını doğru girdiğinden emin olunuz.");
-            }
-        } else {
-            alert("Lütfen kartınızın son kullanma tarihinin doğru girildiğinden emin olun.")
-        }
+    if (secilenPlan === null) {
+        alert("Sepet boş olduğu için ödeme yapamazsınız.")
     } else {
-        alert("Lütfen kart numaranızı doğru girdiğinizden emin olun.")
+        odemeYap()
     }
-})
+}
+
+
