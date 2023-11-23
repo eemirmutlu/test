@@ -47,3 +47,54 @@ function kapatSepet() {
     localStorage.removeItem("secilenPlan");
     location.reload();
 }
+
+const odeme = document.getElementById("odemeYap")
+
+
+// alert(`Ödeyeceğiniz tutar: ${secilenPlan.fiyat}`)
+// const kartNumarasi = Number(prompt("Kredi kartı numaranızı giriniz."))
+function odemeYap() {
+
+    if (kartNumarasi !== null) {
+        const kartTarih = Number(prompt("Kartınızın son kullanım tarihini giriniz."))
+        if (kartTarih !== null) {
+            const cvv = Number(prompt("CVV numaranızı giriniz."));
+            if (cvv !== null) {
+                alert("Ödeme İşleminiz gerçekleştriliyor. Bizi tercih ettiğiniz için teşekkürler.")
+            } else {
+                alert("Lütfen CVV numarasını doğru girdiğinden emin olunuz.");
+            }
+        } else {
+            alert("Lütfen kartınızın son kullanma tarihinin doğru girildiğinden emin olun.")
+        }
+    } else {
+        alert("Lütfen kart numaranızı doğru girdiğinizden emin olun.")
+    }
+};
+
+document.addEventListener("click", function () {
+    
+    // const secilenPlanJSON = localStorage.getItem("secilenPlan");
+    // let secilenPlan;
+
+    // secilenPlan = JSON.parse(secilenPlanJSON);
+
+    // alert(`Ödeyeceğiniz tutar: ${secilenPlan.fiyat}`)
+    const kartNumarasi = Number(prompt("Kredi kartı numaranızı giriniz."))
+
+    if (kartNumarasi !== null) {
+        const kartTarih = Number(prompt("Kartınızın son kullanım tarihini giriniz."))
+        if (kartTarih !== null) {
+            const cvv = Number(prompt("CVV numaranızı giriniz."));
+            if (cvv !== null) {
+                alert("Ödeme İşleminiz gerçekleştriliyor. Bizi tercih ettiğiniz için teşekkürler.")
+            } else {
+                alert("Lütfen CVV numarasını doğru girdiğinden emin olunuz.");
+            }
+        } else {
+            alert("Lütfen kartınızın son kullanma tarihinin doğru girildiğinden emin olun.")
+        }
+    } else {
+        alert("Lütfen kart numaranızı doğru girdiğinizden emin olun.")
+    }
+})
