@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 // const temizle = document.getElementById("temizle")
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -100,8 +100,6 @@ function odemeOnay() {
     }
 }
 
-
-=======
 // const temizle = document.getElementById("temizle")
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -202,6 +200,3 @@ function odemeOnay() {
         odemeYap()
     }
 }
-
-
->>>>>>> c2bf65e7d8854681fb65a630257177cf3becaddb
