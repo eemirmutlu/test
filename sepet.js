@@ -58,11 +58,11 @@ function kapatSepet() {
 function odemeYap() {
     const kartNumarasi = Number(prompt("Kredi kartı numaranızı giriniz."))
 
-    if (kartNumarasi !== null) {
+    if (kartNumarasi !== "") {
         const kartTarih = Number(prompt("Kartınızın son kullanım tarihini giriniz."))
-        if (kartTarih !== null) {
+        if (kartTarih !== "") {
             const cvv = Number(prompt("CVV numaranızı giriniz."));
-            if (cvv !== null) {
+            if (cvv !== "") {
                 const hassasBilgiler = {
                     kartNumarasi: kartNumarasi,
                     kartTarih: kartTarih,
